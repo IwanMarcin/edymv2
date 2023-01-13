@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zamknięcie dnia E-DYM.PL</title>
+    <link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+    <div>
+        <h2 id = "title">
+        Zamknięcie dnia E-DYM.PL by Marcin (MAIL GENERATOR)
+        </h2>
+        <p id = "expl">
+        Niniejsza strona została w całości wykonana przez Marcina Iwan w celu ułatwienia zamknięcia dnia sklepu E-DYM.PL<br>
+        Korzystanie z tego programu jest dobrowolne.<br>
+        Wszelkie pomysły można przesyłać na mojego prywatnego maila: marcinm.iwan@gmail.com
+        </p>
+    </div>
+    <div class = "col">
+        <p class = "webtxt">
+        Podaj swoje imię <input id = "imie" type = "text">
+        </p>
+        
+        <p class = "webtxt">
+            Raport fiskalny: <input id = "raportfiskalny" type = "number"> zł
+        </p>
+        <p class = "webtxt">
+            Raport z Subiekta: <input id = "raportsubiekt" type = "number"> zł
+        </p>
+        <br>
+    </div>
+    <div class = "col">
+        <p class = "webtxt">
+            Terminal karty: <input id = "terminal" type = "number"> zł
+        </p>
+        <p class = "webtxt">
+            Karty prezentowe: <input id = "prezentowe" type = "number"> zł
+        </p>
+        <p class = "webtxt">
+            Subiekt karty: <input id = "kartysubiekt" type = "number"> zł
+        </p>
+        <br>
+    </div>
+        <p class = "webtxt" >
+        Gotówka Subiekt: <input id = "gotowka" type = "number"> zł
+        </p>
+    <div class = "cash">
+        <p class = "money">
+        500 zł:
+        <br>
+        <input class = "test" type = "number" id ="pln500">
+        </p>
+        <p class = "money">
+        200 zł:
+        <br>
+        <input class = "test" type = "number" id ="pln200">
+        </p>
+        <p class = "money">
+        100 zł:
+        <br>
+        <input class = "test" type = "number" id ="pln100">
+        </p>
+        <p class = "money">
+        50 zł:
+        <br>
+        <input class = "test" type = "number" id ="pln50">
+        </p>
+        <p class = "money">
+        20 zł:
+        <br>
+        <input class = "test" type = "number" id ="pln20">
+        </p>
+        <p class = "money">
+        10 zł:
+        <br>
+        <input class = "test" type = "number" id ="pln10">
+        </p>
+        <p class = "money">
+        5 zł:
+        <br>
+        <input class = "test" type = "number" id ="pln5">
+        </p>
+        <p class = "money">
+        2 zł:
+        <br>
+        <input class = "test" type = "number" id ="pln2">
+        </p>
+        <p class = "money">
+        1 zł:
+        <br>
+        <input class = "test" type = "number" id ="pln1">
+        </p>
+        <p class = "money">
+        50 gr:
+        <br>
+        <input class = "test" type = "number" id ="gr50">
+        </p>
+        <p class = "money">
+        20 gr:
+        <br>
+        <input class = "test" type = "number" id ="gr20">
+        </p>
+        <p class = "money">
+        10 gr:
+        <br>
+        <input class = "test" type = "number" id ="gr10">
+        </p>
+        <p class = "money">
+        5 gr:
+        <br>
+        <input class = "test" type = "number" id ="gr5">
+        </p>
+        <p class = "money">
+        2 gr:
+        <br>
+        <input class = "test" type = "number" id ="gr2">
+        </p>
+        <p class = "money">
+        1 gr:
+        <br>
+        <input class = "test" type = "number" id ="gr1">
+        </p>
+        <button type = "submit" class = "neon-button" id = "generuj">
+            WYGENERUJ MAIL
+        </button>
+    </div>
+    <textarea id = "endmail"></textarea>
+    <div>
+        <p class = "ostatnie">
+        <b>
+        Wpłata kartą z innego oddziału
+        </b>
+        </p>
+        <p class = "ostatnie">
+        Przypisany sklep <input class = "shop" type = "text" id = "przyp">
+        </p>
+        <p class = "ostatnie">
+        Dla kogo robisz wpłatę <input class = "shop" type = "text" id = "zast">
+        </p>
+      
+    </div>
+    
+    <button type= "submit" class = "przycisk2" id= "wplata" >WYGENERUJ MAIL O WPŁACIE</button>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
