@@ -6,9 +6,11 @@ document.getElementById("generuj").onclick = function(){
     const prez = document.getElementById("prezentowe").value;
     const subkarty = document.getElementById("kartysubiekt").value;
     const gotowa = document.getElementById("gotowka").value;
+    const symbol = document.getElementById("symbolsklepu").value;
 
-    //x ====> ZŁOTÓWKI
-    //y ====> GROSZE
+    let currentDate = new Date();
+    let month = currentDate.getMonth() + 1;
+    let year = currentDate.getFullYear();
 
     let x500 = document.getElementById("pln500").value;
     let x200 = document.getElementById("pln200").value;
@@ -27,7 +29,6 @@ document.getElementById("generuj").onclick = function(){
     let y2 = document.getElementById("gr2").value;
     let y1 = document.getElementById("gr1").value;
 
-    //PODLICZANIE KASY
 
     let zlotowki = (x500*500)+(x200*200)+(x100*100)+(x50*50)+(x20*20)+(x10*10)+(x5*5)+(x2*2)+(x1*1);
     let grosze = (y50*0.50)+(y20*0.20)+(y10*0.10)+(y5*0.05)+(y2*0.02)+(y1*0.01);
@@ -37,10 +38,8 @@ document.getElementById("generuj").onclick = function(){
     let roz = sumakasa - gotowa;
     roz = roz.toFixed(2);
 
-
-    //GENEROWANIE MAILA
-
-    document.getElementById("endmail").innerHTML = 
+    if (termi === subkarty){
+document.getElementById("endmail").innerHTML = 
 `Cześć,
 
 ${fiskalny} zł - Raport fiskalny
@@ -56,7 +55,57 @@ ${roz} zł - Różnica
 
 Pozdrawiam,
 ${name} :)`
-} 
+} else if (termi > subkarty) {
+    let roznicakarty = termi - subkarty;
+  document.getElementById("endmail").innerHTML = 
+`Cześć,
+
+${fiskalny} zł - Raport fiskalny
+${subiekt} zł - Raport z Subiekta
+
+${termi} zł - Terminal karty
+${prez} zł - Karty prezentowe
+${subkarty} zł - Subiekt karty
+${roznicakarty} zł - Różnica spowodowana pomyłką w sposobie płatności
+
+${gotowa} zł - Gotówka Subiekt
+${sumakasa} zł - Gotówka Kasa
+${roz} zł - Różnica
+
+PROŚBA:
+Proszę o poprawę paragonu z PŁATNOŚĆ GOTÓWKA na PŁATNOŚĆ KARTĄ.
+Numer paragonu: PA *popraw*/${symbol}/${month}/${year}
+
+Pozdrawiam,
+${name} :)`  
+
+} else {
+    let roznicakarty = subkarty - termi;
+    document.getElementById("endmail").innerHTML = 
+`Cześć,
+
+${fiskalny} zł - Raport fiskalny
+${subiekt} zł - Raport z Subiekta
+
+${termi} zł - Terminal karty
+${prez} zł - Karty prezentowe
+${subkarty} zł - Subiekt karty
+${roznicakarty} zł - Różnica spowodowana pomyłką w sposobie płatności
+
+${gotowa} zł - Gotówka Subiekt
+${sumakasa} zł - Gotówka Kasa
+${roz} zł - Różnica
+
+PROŚBA:
+Proszę o poprawę paragonu z PŁATNOŚĆ KARTĄ na PŁATNOŚĆ GOTÓWKĄ.
+Numer paragonu: PA *popraw*/${symbol}/${month}/${year}
+
+Pozdrawiam,
+${name} :)`  
+}
+    }
+
+    
 
 document.getElementById("wplata").onclick = function(){
    
