@@ -57,6 +57,7 @@ Pozdrawiam,
 ${name} :)`
 } else if (termi > subkarty) {
     let roznicakarty = termi - subkarty;
+    roznicakarty = roznicakarty.toFixed(2);
   document.getElementById("endmail").innerHTML = 
 `Cześć,
 
@@ -81,6 +82,7 @@ ${name} :)`
 
 } else {
     let roznicakarty = subkarty - termi;
+    roznicakarty = roznicakarty.toFixed(2);
     document.getElementById("endmail").innerHTML = 
 `Cześć,
 
