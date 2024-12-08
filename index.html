@@ -8,146 +8,157 @@
     <link rel = "stylesheet" href = "style.css">
 </head>
 <body>
-    <div>
-        <h2 id = "title">
-        Zamknięcie dnia E-DYM.PL by Marcin (MAIL GENERATOR)
+    <div class="description">
+        <h2>
+        E-DYM.PL Generator email
         </h2>
-        <p id = "expl">
+        <p class = "informations">
         Niniejsza strona została w całości wykonana przez Marcina Iwan w celu ułatwienia zamknięcia dnia sklepu E-DYM.PL<br>
         Korzystanie z tego programu jest dobrowolne.<br>
         Wszelkie pomysły można przesyłać na mojego prywatnego maila: marcinm.iwan@gmail.com
         </p>
     </div>
-    <div class = "col">
-        <p class = "webtxt">
-        Podaj swoje imię <input id = "imie" type = "text">
-        </p>
-        
-        <p class = "webtxt">
-            Raport fiskalny: <input id = "raportfiskalny" type = "number"> zł
-        </p>
-        <p class = "webtxt">
-            Raport z Subiekta: <input id = "raportsubiekt" type = "number"> zł
-        </p>
-        <br>
+    <div class="raport_columns">
+        <div class="first_col">
+            <p class = "user_value_input">
+                Podaj swoje imię <input id = "imie" type = "text">
+                </p>
+            <p class = "user_value_input" >
+                Symbol sklepu (np.KR4): <input id = "symbolsklepu" type = "text">
+            </p>
+            <p class = "user_value_input">
+                Przypisany sklep <input id = "przyp" type = "text">
+            </p>
+        </div>
+        <div class="second_col">
+            <p class = "user_value_input" >
+                Gotówka Subiekt: <input id = "gotowka" type = "number"> zł
+            </p>
+            <p class = "user_value_input">
+                Raport z Subiekta: <input id = "raportsubiekt" type = "number"> zł
+            </p>
+            <p class = "user_value_input">
+                Subiekt karty: <input id = "kartysubiekt" type = "number"> zł
+            </p>
+        </div>
+        <div class = "third_col">
+            <p class = "user_value_input">
+                Karty prezentowe: <input id = "prezentowe" type = "number" value="0.00"> zł
+            </p>
+            <p class = "user_value_input">
+                Raport fiskalny: <input id = "raportfiskalny" type = "number"> zł
+            </p>
+            <p class = "user_value_input">
+                Terminal karty: <input id = "terminal" type = "number"> zł
+            </p>
+        </div>
     </div>
-    <div class = "col">
-        <p class = "webtxt">
-            Terminal karty: <input id = "terminal" type = "number"> zł
-        </p>
-        <p class = "webtxt">
-            Karty prezentowe: <input id = "prezentowe" type = "number"> zł
-        </p>
-        <p class = "webtxt">
-            Subiekt karty: <input id = "kartysubiekt" type = "number"> zł
-        </p>
-        <br>
-    </div>
-        <p class = "webtxt" >
-        Gotówka Subiekt: <input id = "gotowka" type = "number"> zł
-        </p>
-        <p class = "webtxt" >
-        Symbol sklepu (np.KR4): <input id = "symbolsklepu" type = "text">
-        </p>
-    <div class = "cash">
-        <p class = "money">
-        500 zł:
-        <br>
-        <input class = "test" type = "number" id ="pln500">
-        </p>
-        <p class = "money">
-        200 zł:
-        <br>
-        <input class = "test" type = "number" id ="pln200">
-        </p>
-        <p class = "money">
-        100 zł:
-        <br>
-        <input class = "test" type = "number" id ="pln100">
-        </p>
-        <p class = "money">
-        50 zł:
-        <br>
-        <input class = "test" type = "number" id ="pln50">
-        </p>
-        <p class = "money">
-        20 zł:
-        <br>
-        <input class = "test" type = "number" id ="pln20">
-        </p>
-        <p class = "money">
-        10 zł:
-        <br>
-        <input class = "test" type = "number" id ="pln10">
-        </p>
-        <p class = "money">
-        5 zł:
-        <br>
-        <input class = "test" type = "number" id ="pln5">
-        </p>
-        <p class = "money">
-        2 zł:
-        <br>
-        <input class = "test" type = "number" id ="pln2">
-        </p>
-        <p class = "money">
-        1 zł:
-        <br>
-        <input class = "test" type = "number" id ="pln1">
-        </p>
-        <p class = "money">
-        50 gr:
-        <br>
-        <input class = "test" type = "number" id ="gr50">
-        </p>
-        <p class = "money">
-        20 gr:
-        <br>
-        <input class = "test" type = "number" id ="gr20">
-        </p>
-        <p class = "money">
-        10 gr:
-        <br>
-        <input class = "test" type = "number" id ="gr10">
-        </p>
-        <p class = "money">
-        5 gr:
-        <br>
-        <input class = "test" type = "number" id ="gr5">
-        </p>
-        <p class = "money">
-        2 gr:
-        <br>
-        <input class = "test" type = "number" id ="gr2">
-        </p>
-        <p class = "money">
-        1 gr:
-        <br>
-        <input class = "test" type = "number" id ="gr1">
-        </p>
-        <button type = "submit" class = "neon-button" id = "generuj">
-            WYGENERUJ MAIL
+    <div class="copy_buttons">
+        <button type = "submit" class = "neon-button" id = "kopiuj">
+            Raport fiskalny się zgadza
+        </button>
+        <button type = "submit" class = "neon-button" id = "kopiuj_karta">
+            Płatności kartą się zgadzają
         </button>
     </div>
-    <textarea id = "endmail"></textarea>
-    <div>
-        <p class = "ostatnie">
-        <b>
-        Wpłata kartą z innego oddziału
-        </b>
-        </p>
-        <p class = "ostatnie">
-        Przypisany sklep <input class = "shop" type = "text" id = "przyp">
-        </p>
-        <p class = "ostatnie">
-        Dla kogo robisz wpłatę <input class = "shop" type = "text" id = "zast">
-        </p>
-      
+        
+    <div class ="cash">
+        <div class="first_cash_col">
+            <p class = "money">
+                500 zł:
+                <input class = "test" type = "number" id ="pln500">
+            </p>
+            <p class = "money">
+                200 zł:
+                <input class = "test" type = "number" id ="pln200">
+            </p>
+            <p class = "money">
+                100 zł:
+                <input class = "test" type = "number" id ="pln100">
+            </p>
+        </div>
+
+        <div class="second_cash_col">
+            <p class = "money">
+                50 zł:
+                <input class = "test" type = "number" id ="pln50">
+            </p>
+            <p class = "money">
+                20 zł:
+                <input class = "test" type = "number" id ="pln20">
+            </p>
+            <p class = "money">
+                10 zł:
+                <input class = "test" type = "number" id ="pln10">
+            </p>
+        </div>
+        
+        <div class="third_cash_col">
+            <p class = "money">
+                5 zł:
+                <input class = "test" type = "number" id ="pln5">
+            </p>
+            <p class = "money">
+                2 zł:
+                <input class = "test" type = "number" id ="pln2">
+            </p>
+            <p class = "money">
+                1 zł:
+                <input class = "test" type = "number" id ="pln1">
+            </p>
+        </div>
+        
+        <div class="fourth_cash_col">
+            <p class = "money">
+                50 gr:
+                <input class = "test" type = "number" id ="gr50">
+            </p>
+            <p class = "money">
+                20 gr:
+                <input class = "test" type = "number" id ="gr20">
+            </p>
+            <p class = "money">
+                10 gr:
+                <input class = "test" type = "number" id ="gr10">
+            </p>
+        </div>
+
+        <div class="fifth_cash_col">
+            <p class = "money">
+                5 gr:
+                <input class = "test" type = "number" id ="gr5">
+            </p>
+            <p class = "money">
+                2 gr:
+                <input class = "test" type = "number" id ="gr2">
+            </p>
+            <p class = "money">
+                1 gr:
+                <input class = "test" type = "number" id ="gr1">
+            </p>
+        </div>
+    </div>
+
+    <div class="generate_buttons">
+        <button type = "submit" class = "neon-button" id = "generuj">
+            WYGENERUJ MAIL Z RAPORTEM
+        </button>
+        <button type= "submit" class = "neon-button" id= "wplata" >
+            WYGENERUJ MAIL O WPŁACIE
+        </button>
+        <button type = "submit" class = "neon-button" id = "kopiuj_z_textarea">
+            Skopiuj zawartość maila
+        </button>
     </div>
     
-    <button type= "submit" class = "przycisk2" id= "wplata" >WYGENERUJ MAIL O WPŁACIE</button>
+    <div class="text_to_copy">
+        <textarea id = "endmail" readonly>     
+        </textarea>
+        </div>
+    </div>
+    
 
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

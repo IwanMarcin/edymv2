@@ -1,72 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 html {
     background-color: #545660;
+    font-family: 'Bebas Neue';
+    letter-spacing: 1px;
 }
 
 
-#title {
-    border: 4px solid #060706;
-    border-color: rgba (255, 255, 255, 0.5);
-    border-radius: 30px 30px 30px 30px;
-    background-color: #1E1E21;
-    color: white;
-    width: 750px;
-    text-align: center;
+
+.description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h2 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3em;
+    top: 50%;
+    left: 50%;
+    background-size: 100% 10px;
+    background-repeat: no-repeat;
+    background-position: 100% 0%;
+    text-shadow: 0 0 0.5em #ffffff, 0 0 0.5em #ffffff, 0 0 0.5em #ffffff;
     }
 
-
-#expl {
-    border: 4px solid #060706;
-    border-color: rgba (255, 255, 255, 0.5);
-    border-radius: 30px 30px 30px 30px;
-    background-color: #1E1E21;
+.informations {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     color: white;
+    font-size: 1em;
     width: 850px;
-    padding-left: 20px;
-    }
-
-.webtxt {
-    border: 4px solid #060706;
-    border-color: rgba (255, 255, 255, 0.5);
+    padding: 1%;
+    text-align: center;
+    background-color: #343439;
     border-radius: 30px 30px 30px 30px;
-    background-color: #1E1E21;
-    color: white;
-    width: 350px;
-    padding-left: 20px;
     }
 
-.col {
-    display: inline-block;
-    margin-inline-end: 10px;
+.raport_columns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
     }
+
+.first_col{
+    display: flex;
+    flex-direction: column;
+    margin-right: 5%;
+    }
+
+.second_col {
+    display: flex;
+    flex-direction: column;
+    margin-right:5%;
+}
+
+.third_col {
+    display: flex;
+    flex-direction: column;
+}
+
+.copy_buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    }
+
+.cash {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.user_value_input {
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    color: white;
+    background-color: #343439;
+    width: 100%;
+    padding: 5%;
+    border-radius: 30px 30px 30px 30px;
+    border: 4px solid #060706;
+    }
+
+.first_cash_col, .second_cash_col, .third_cash_col, .fourth_cash_col, .fifth_cash_col {
+    display: flex;
+    flex-direction: column;
+    margin-right: 5%;
+    }
+
 
 .test{
     width: 50px;
     }
 
 .money {
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
     display: inline-block;
-    margin-inline-end: 7px;
     border: 4px solid #060706;
-    border-color: rgba (255, 255, 255, 0.5);
+    background-color: #343439;
     border-radius: 30px 30px 30px 30px;
-    background-color: #1E1E21;
     color: white;
     width: 75px;
     text-align: center;
-    padding-left: 3,5px;
-    padding-bottom: 5px;
+    padding: 10%;
     }
-#endmail {
-    height: 350px;
-    width: 300px;
-    resize: none;
-    margin-block-end: 30px;
-    position: absolute;
+
+.generate_buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
+.text_to_copy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+    
+textarea {
+    height: 300px;
+    width: 50%;
+    border: 4px solid #060706;
+    resize: none;
+}
+
+
 .neon-button {
+    font-family: 'Bebas Neue';
+    letter-spacing: 1px;
     display: inline-block;
-    padding: 0.5em 1em;
+    padding: 1em 1.5em;
+    font-size: 15px;
     margin: 0.5em;
     border: none;
     border-radius: 0.5em;
@@ -74,7 +149,7 @@ html {
     color: #ffffff;
     text-decoration: none;
     text-shadow: 0 0.15em 0.3em rgba(0,0,0,0.5);
-    background-color: #060706;
+    background-color: #062406;
     transition: background-color 0.3s;
 
   }
@@ -108,26 +183,6 @@ height: 25px;
     margin-left: 30px;
 }
 
-.przycisk2 {
-    margin-left: 400px;
-    width: 300px;
-    height: 30px;
-    text-align: center;
-    border: none;
-    border-radius: 0.5em;
-    box-shadow: 0 0.15em 0.3em rgba(255,255,255,0.5);
-    color: #ffffff;
-    text-decoration: none;
-    text-shadow: 0 0.15em 0.3em rgba(0,0,0,0.5);
-    background-color: #060706;
-    transition: background-color 0.3s;
-}
 
-.przycisk2:hover {
-    background-color: #00cc00;
-}
 
-.przycisk2:active {
-    box-shadow: 0 0.1em 0.15em rgba(255,255,255,0.5);
-    transform: translateY(0.1em);
-}
+
