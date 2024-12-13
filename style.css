@@ -8,7 +8,7 @@ html {
 
 
 
-.description {
+.infoContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,7 +94,7 @@ h2 {
     }
 
 
-.test{
+.inputArea{
     width: 50px;
     }
 
@@ -154,30 +154,15 @@ textarea {
 
   }
   
-  .neon-button:hover {
+.neon-button:hover {
     background-color: #00cc00;
   }
   
-  .neon-button:active {
+.neon-button:active {
     box-shadow: 0 0.1em 0.15em rgba(255,255,255,0.5);
     transform: translateY(0.1em);
   }
  
-.ostatnie {
-
-border: 4px solid #060706;
-border-color: rgba (255, 255, 255, 0.5);
-border-radius: 30px 30px 30px 30px;
-background-color: #1E1E21;
-color: white;
-width: 350px;
-position: relative;
-margin-left: 400px;
-padding-left: 30px;
-height: 25px;
-
-}
-
 .shop {
     width: 100px;
     margin-left: 30px;

@@ -1,165 +1,174 @@
-document.getElementById("generuj").onclick = function () {
-    let name = document.getElementById("imie").value;
-    let fiskalny = Number(document.getElementById("raportfiskalny").value);
-    let subiekt = Number(document.getElementById("raportsubiekt").value);
-    let termi = Number(document.getElementById("terminal").value);
-    let prez = Number(document.getElementById("prezentowe").value);
-    let subkarty = Number(document.getElementById("kartysubiekt").value);
-    let gotowa = Number(document.getElementById("gotowka").value);
-    let symbol = document.getElementById("symbolsklepu").value;
+document.getElementById("generateEmailWithRaport").onclick = function () {
+    let name = document.getElementById("name").value;
+    let raportFromPrinter = Number(
+        document.getElementById("raportFromPrinter").value
+    );
+    let raportFromSubiekt = Number(
+        document.getElementById("raportFromSubiekt").value
+    );
+    let raportFromCardTerminal = Number(
+        document.getElementById("raportFromCardTerminal").value
+    );
+    let giftCardPayments = Number(
+        document.getElementById("giftCardPayments").value
+    );
+    let cardPaymentsSubiekt = Number(
+        document.getElementById("cardPaymentsSubiekt").value
+    );
+    let cashPayments = Number(document.getElementById("cashPayments").value);
+    let shopID = document.getElementById("shopID").value;
 
     let currentDate = new Date();
     let month = ("0" + (currentDate.getMonth() + 1)).slice(-2);
     let year = currentDate.getFullYear();
 
-    let x500 = Number(document.getElementById("pln500").value);
-    let x200 = Number(document.getElementById("pln200").value);
-    let x100 = Number(document.getElementById("pln100").value);
-    let x50 = Number(document.getElementById("pln50").value);
-    let x20 = Number(document.getElementById("pln20").value);
-    let x10 = Number(document.getElementById("pln10").value);
-    let x5 = Number(document.getElementById("pln5").value);
-    let x2 = Number(document.getElementById("pln2").value);
-    let x1 = Number(document.getElementById("pln1").value);
-    let y50 = Number(document.getElementById("gr50").value);
-    let y20 = Number(document.getElementById("gr20").value);
-    let y10 = Number(document.getElementById("gr10").value);
-    let y5 = Number(document.getElementById("gr5").value);
-    let y2 = Number(document.getElementById("gr2").value);
-    let y1 = Number(document.getElementById("gr1").value);
+    let pln500 = Number(document.getElementById("pln500").value);
+    let pln200 = Number(document.getElementById("pln200").value);
+    let pln100 = Number(document.getElementById("pln100").value);
+    let pln50 = Number(document.getElementById("pln50").value);
+    let pln20 = Number(document.getElementById("pln20").value);
+    let pln10 = Number(document.getElementById("pln10").value);
+    let pln5 = Number(document.getElementById("pln5").value);
+    let pln2 = Number(document.getElementById("pln2").value);
+    let pln1 = Number(document.getElementById("pln1").value);
+    let gr50 = Number(document.getElementById("gr50").value);
+    let gr20 = Number(document.getElementById("gr20").value);
+    let gr10 = Number(document.getElementById("gr10").value);
+    let gr5 = Number(document.getElementById("gr5").value);
+    let gr2 = Number(document.getElementById("gr2").value);
+    let gr1 = Number(document.getElementById("gr1").value);
 
-    let sumakasa =
-        x500 * 500 +
-        x200 * 200 +
-        x100 * 100 +
-        x50 * 50 +
-        x20 * 20 +
-        x10 * 10 +
-        x5 * 5 +
-        x2 * 2 +
-        x1 * 1 +
-        y50 * 0.5 +
-        y20 * 0.2 +
-        y10 * 0.1 +
-        y5 * 0.05 +
-        y2 * 0.02 +
-        y1 * 0.01;
+    let cashSum =
+        pln500 * 500 +
+        pln200 * 200 +
+        pln100 * 100 +
+        pln50 * 50 +
+        pln20 * 20 +
+        pln10 * 10 +
+        pln5 * 5 +
+        pln2 * 2 +
+        pln1 * 1 +
+        gr50 * 0.5 +
+        gr20 * 0.2 +
+        gr10 * 0.1 +
+        gr5 * 0.05 +
+        gr2 * 0.02 +
+        gr1 * 0.01;
 
-    sumakasa = sumakasa;
+    let cashDiff = cashSum - cashPayments;
 
-    let roz = sumakasa - gotowa;
-    roz = roz;
+    let allCardPayments = raportFromCardTerminal + giftCardPayments;
 
-    let wszystkie_platnosci_karta = termi + prez;
-
-    if (fiskalny > subiekt) {
+    if (raportFromPrinter > raportFromSubiekt) {
         alert(
             `Prawdopodobnie jakiś z paragonów na kwotę ${
-                fiskalny - subiekt
+                raportFromPrinter - raportFromSubiekt
             } zł został podwójnie zafiskalizowany. Napisz stosowne oświadczenie i koniecznie daj znać o tym Milence!`
         );
-    } else if (fiskalny < subiekt) {
+    } else if (raportFromPrinter < raportFromSubiekt) {
         alert(
             `Prawdopodobnie jakiś z paragonów na kwotę ${
-                subiekt - fiskalny
+                raportFromSubiekt - raportFromPrinter
             } zł nie został zarejestrowany na drukarce fiskalnej, z której otrzymałeś raport. Sprawdź statusy fiskalne w Subiekcie! Jeśli wszystkie się zgadzają, istnieje szansa, że paragon mógł zostać wydrukowany na innej drukarce fiskalnej! Koniecznie skontaktuj się z Mileną, aby wyjaśnić ten problem!`
         );
     }
 
-    if (wszystkie_platnosci_karta === subkarty) {
-        document.getElementById("endmail").innerHTML = `Cześć,
+    if (allCardPayments === cardPaymentsSubiekt) {
+        document.getElementById("readyToSendEmail").innerHTML = `Cześć,
 
-${fiskalny.toFixed(2)} zł - Raport fiskalny
-${subiekt.toFixed(2)} zł - Raport z Subiekta
+${raportFromPrinter.toFixed(2)} zł - Raport fiskalny
+${raportFromSubiekt.toFixed(2)} zł - Raport z Subiekta
 
-${termi.toFixed(2)} zł - Terminal karty
-${prez.toFixed(2)} zł - Karty prezentowe
-${subkarty.toFixed(2)} zł - Subiekt karty
+${raportFromCardTerminal.toFixed(2)} zł - Terminal karty
+${giftCardPayments.toFixed(2)} zł - Karty prezentowe
+${cardPaymentsSubiekt.toFixed(2)} zł - Subiekt karty
 
-${gotowa.toFixed(2)} zł - Gotówka Subiekt
-${sumakasa.toFixed(2)} zł - Gotówka Kasa
-${roz.toFixed(2)} zł - Różnica
+${cashPayments.toFixed(2)} zł - Gotówka Subiekt
+${cashSum.toFixed(2)} zł - Gotówka Kasa
+${cashDiff.toFixed(2)} zł - Różnica
 
 Pozdrawiam,
 ${name} :)`;
-    } else if (wszystkie_platnosci_karta > subkarty) {
-        let roznicakarty = wszystkie_platnosci_karta - subkarty;
-        roznicakarty = roznicakarty;
-        document.getElementById("endmail").innerHTML = `Cześć,
+    } else if (allCardPayments > cardPaymentsSubiekt) {
+        let cardPaymentsDiff = allCardPayments - cardPaymentsSubiekt;
+        document.getElementById("readyToSendEmail").innerHTML = `Cześć,
 
-${fiskalny.toFixed(2)} zł - Raport fiskalny
-${subiekt.toFixed(2)} zł - Raport z Subiekta
+${raportFromPrinter.toFixed(2)} zł - Raport fiskalny
+${raportFromSubiekt.toFixed(2)} zł - Raport z Subiekta
 
-${termi.toFixed(2)} zł - Terminal karty
-${prez.toFixed(2)} zł - Karty prezentowe
-${subkarty.toFixed(2)} zł - Subiekt karty
-${roznicakarty.toFixed(2)} zł - Różnica spowodowana pomyłką w sposobie płatności
+${raportFromCardTerminal.toFixed(2)} zł - Terminal karty
+${giftCardPayments.toFixed(2)} zł - Karty prezentowe
+${cardPaymentsSubiekt.toFixed(2)} zł - Subiekt karty
+${cardPaymentsDiff.toFixed(
+    2
+)} zł - Różnica spowodowana pomyłką w sposobie płatności
 
-${gotowa.toFixed(2)} zł - Gotówka Subiekt
-${sumakasa.toFixed(2)} zł - Gotówka Kasa
-${roz.toFixed(2)} zł - Różnica
+${cashPayments.toFixed(2)} zł - Gotówka Subiekt
+${cashSum.toFixed(2)} zł - Gotówka Kasa
+${cashDiff.toFixed(2)} zł - Różnica
 
 PROŚBA:
 Proszę o poprawę paragonu z PŁATNOŚĆ GOTÓWKA na PŁATNOŚĆ KARTĄ.
-Numer paragonu: PA *popraw*/${symbol}/${month}/${year}
+Numer paragonu: PA *popraw*/${shopID}/${month}/${year}
 
 Pozdrawiam,
 ${name} :)`;
-    } else if (wszystkie_platnosci_karta < subkarty) {
-        let roznicakarty = subkarty - wszystkie_platnosci_karta;
-        roznicakarty = roznicakarty;
-        document.getElementById("endmail").innerHTML = `Cześć,
+    } else if (allCardPayments < cardPaymentsSubiekt) {
+        let cardPaymentsDiff = cardPaymentsSubiekt - allCardPayments;
+        document.getElementById("readyToSendEmail").innerHTML = `Cześć,
 
-${fiskalny.toFixed(2)} zł - Raport fiskalny
-${subiekt.toFixed(2)} zł - Raport z Subiekta
+${raportFromPrinter.toFixed(2)} zł - Raport fiskalny
+${raportFromSubiekt.toFixed(2)} zł - Raport z Subiekta
 
-${termi.toFixed(2)} zł - Terminal karty
-${prez.toFixed(2)} zł - Karty prezentowe
-${subkarty.toFixed(2)} zł - Subiekt karty
-${roznicakarty.toFixed(2)} zł - Różnica spowodowana pomyłką w sposobie płatności
+${raportFromCardTerminal.toFixed(2)} zł - Terminal karty
+${giftCardPayments.toFixed(2)} zł - Karty prezentowe
+${cardPaymentsSubiekt.toFixed(2)} zł - Subiekt karty
+${cardPaymentsDiff.toFixed(
+    2
+)} zł - Różnica spowodowana pomyłką w sposobie płatności
 
-${gotowa.toFixed(2)} zł - Gotówka Subiekt
-${sumakasa.toFixed(2)} zł - Gotówka Kasa
-${roz.toFixed(2)} zł - Różnica
+${cashPayments.toFixed(2)} zł - Gotówka Subiekt
+${cashSum.toFixed(2)} zł - Gotówka Kasa
+${cashDiff.toFixed(2)} zł - Różnica
 
 PROŚBA:
 Proszę o poprawę paragonu z PŁATNOŚĆ KARTĄ na PŁATNOŚĆ GOTÓWKĄ.
-Numer paragonu: PA *popraw*/${symbol}/${month}/${year}
+Numer paragonu: PA *popraw*/${shopID}/${month}/${year}
 
 Pozdrawiam,
 ${name} :)`;
     }
 };
 
-document.getElementById("wplata").onclick = function () {
+document.getElementById("emailAboutDeposit").onclick = function () {
     let currentDate = new Date();
     let day = currentDate.getDate();
     let month = ("0" + (currentDate.getMonth() + 1)).slice(-2);
     let year = currentDate.getFullYear();
-    let dzisiaj = `${day}.${month}.${year}`;
-    let name = document.getElementById("imie").value;
-    let punkt1 = document.getElementById("symbolsklepu").value;
-    let punkt2 = document.getElementById("przyp").value;
+    let today = `${day}.${month}.${year}`;
+    let name = document.getElementById("name").value;
+    let currentShop = document.getElementById("shopID").value;
+    let mainShop = document.getElementById("mainShop").value;
 
-    document.getElementById("endmail").innerHTML = `Cześć,
+    document.getElementById("readyToSendEmail").innerHTML = `Cześć,
 
-W dniu ${dzisiaj} utarg z punktu ${punkt1} został wpłacony na kartę przypisaną do punktu ${punkt2}.
+W dniu ${today} utarg z punktu ${currentShop} został wpłacony na kartę przypisaną do punktu ${mainShop}.
 
 Pozdrawiam,
 ${name}`;
 };
 
-document.getElementById("kopiuj").onclick = function () {
-    let kwotaZSubiekta = document.getElementById("raportsubiekt").value;
-    document.getElementById("raportfiskalny").value = kwotaZSubiekta;
+document.getElementById("copyRaportInput").onclick = function () {
+    let valueFromSubiekt = document.getElementById("raportFromSubiekt").value;
+    document.getElementById("raportFromPrinter").value = valueFromSubiekt;
 };
 
-document.getElementById("kopiuj_karta").onclick = function () {
-    let kwotaZSubiekta = document.getElementById("kartysubiekt").value;
-    document.getElementById("terminal").value = kwotaZSubiekta;
+document.getElementById("copySubiektCardPayments").onclick = function () {
+    let valueFromSubiekt = document.getElementById("cardPaymentsSubiekt").value;
+    document.getElementById("raportFromCardTerminal").value = valueFromSubiekt;
 };
 
-document.getElementById("kopiuj_z_textarea").onclick = function () {
-    let text = document.getElementById("endmail").innerHTML;
+document.getElementById("copyFromTextArea").onclick = function () {
+    let text = document.getElementById("readyToSendEmail").innerHTML;
     navigator.clipboard.writeText(text);
 };
