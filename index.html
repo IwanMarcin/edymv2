@@ -8,7 +8,7 @@
     <link rel = "stylesheet" href = "style.css">
 </head>
 <body>
-    <div class="description">
+    <div class="infoContainer">
         <h2>
         E-DYM.PL Generator email
         </h2>
@@ -21,43 +21,43 @@
     <div class="raport_columns">
         <div class="first_col">
             <p class = "user_value_input">
-                Podaj swoje imię <input id = "imie" type = "text">
+                Podaj swoje imię <input id = "name" type = "text">
                 </p>
             <p class = "user_value_input" >
-                Symbol sklepu (np.KR4): <input id = "symbolsklepu" type = "text">
+                Symbol sklepu (np.KR4): <input id = "shopID" type = "text">
             </p>
             <p class = "user_value_input">
-                Przypisany sklep <input id = "przyp" type = "text">
+                Przypisany sklep <input id = "mainShop" type = "text">
             </p>
         </div>
         <div class="second_col">
             <p class = "user_value_input" >
-                Gotówka Subiekt: <input id = "gotowka" type = "number"> zł
+                Gotówka Subiekt: <input id = "cashPayments" type = "number"> zł
             </p>
             <p class = "user_value_input">
-                Raport z Subiekta: <input id = "raportsubiekt" type = "number"> zł
+                Raport z Subiekta: <input id = "raportFromSubiekt" type = "number"> zł
             </p>
             <p class = "user_value_input">
-                Subiekt karty: <input id = "kartysubiekt" type = "number"> zł
+                Subiekt karty: <input id = "cardPaymentsSubiekt" type = "number"> zł
             </p>
         </div>
         <div class = "third_col">
             <p class = "user_value_input">
-                Karty prezentowe: <input id = "prezentowe" type = "number" value="0.00"> zł
+                Karty prezentowe: <input id = "giftCardPayments" type = "number" value="0.00"> zł
             </p>
             <p class = "user_value_input">
-                Raport fiskalny: <input id = "raportfiskalny" type = "number"> zł
+                Raport fiskalny: <input id = "raportFromPrinter" type = "number"> zł
             </p>
             <p class = "user_value_input">
-                Terminal karty: <input id = "terminal" type = "number"> zł
+                Terminal karty: <input id = "raportFromCardTerminal" type = "number"> zł
             </p>
         </div>
     </div>
     <div class="copy_buttons">
-        <button type = "submit" class = "neon-button" id = "kopiuj">
+        <button type = "submit" class = "neon-button" id = "copyRaportInput">
             Raport fiskalny się zgadza
         </button>
-        <button type = "submit" class = "neon-button" id = "kopiuj_karta">
+        <button type = "submit" class = "neon-button" id = "copySubiektCardPayments">
             Płatności kartą się zgadzają
         </button>
     </div>
@@ -66,93 +66,93 @@
         <div class="first_cash_col">
             <p class = "money">
                 500 zł:
-                <input class = "test" type = "number" id ="pln500">
+                <input class = "inputArea" type = "number" id ="pln500">
             </p>
             <p class = "money">
                 200 zł:
-                <input class = "test" type = "number" id ="pln200">
+                <input class = "inputArea" type = "number" id ="pln200">
             </p>
             <p class = "money">
                 100 zł:
-                <input class = "test" type = "number" id ="pln100">
+                <input class = "inputArea" type = "number" id ="pln100">
             </p>
         </div>
 
         <div class="second_cash_col">
             <p class = "money">
                 50 zł:
-                <input class = "test" type = "number" id ="pln50">
+                <input class = "inputArea" type = "number" id ="pln50">
             </p>
             <p class = "money">
                 20 zł:
-                <input class = "test" type = "number" id ="pln20">
+                <input class = "inputArea" type = "number" id ="pln20">
             </p>
             <p class = "money">
                 10 zł:
-                <input class = "test" type = "number" id ="pln10">
+                <input class = "inputArea" type = "number" id ="pln10">
             </p>
         </div>
         
         <div class="third_cash_col">
             <p class = "money">
                 5 zł:
-                <input class = "test" type = "number" id ="pln5">
+                <input class = "inputArea" type = "number" id ="pln5">
             </p>
             <p class = "money">
                 2 zł:
-                <input class = "test" type = "number" id ="pln2">
+                <input class = "inputArea" type = "number" id ="pln2">
             </p>
             <p class = "money">
                 1 zł:
-                <input class = "test" type = "number" id ="pln1">
+                <input class = "inputArea" type = "number" id ="pln1">
             </p>
         </div>
         
         <div class="fourth_cash_col">
             <p class = "money">
                 50 gr:
-                <input class = "test" type = "number" id ="gr50">
+                <input class = "inputArea" type = "number" id ="gr50">
             </p>
             <p class = "money">
                 20 gr:
-                <input class = "test" type = "number" id ="gr20">
+                <input class = "inputArea" type = "number" id ="gr20">
             </p>
             <p class = "money">
                 10 gr:
-                <input class = "test" type = "number" id ="gr10">
+                <input class = "inputArea" type = "number" id ="gr10">
             </p>
         </div>
 
         <div class="fifth_cash_col">
             <p class = "money">
                 5 gr:
-                <input class = "test" type = "number" id ="gr5">
+                <input class = "inputArea" type = "number" id ="gr5">
             </p>
             <p class = "money">
                 2 gr:
-                <input class = "test" type = "number" id ="gr2">
+                <input class = "inputArea" type = "number" id ="gr2">
             </p>
             <p class = "money">
                 1 gr:
-                <input class = "test" type = "number" id ="gr1">
+                <input class = "inputArea" type = "number" id ="gr1">
             </p>
         </div>
     </div>
 
     <div class="generate_buttons">
-        <button type = "submit" class = "neon-button" id = "generuj">
+        <button type = "submit" class = "neon-button" id = "generateEmailWithRaport">
             WYGENERUJ MAIL Z RAPORTEM
         </button>
-        <button type= "submit" class = "neon-button" id= "wplata" >
+        <button type= "submit" class = "neon-button" id= "emailAboutDeposit" >
             WYGENERUJ MAIL O WPŁACIE
         </button>
-        <button type = "submit" class = "neon-button" id = "kopiuj_z_textarea">
+        <button type = "submit" class = "neon-button" id = "copyFromTextArea">
             Skopiuj zawartość maila
         </button>
     </div>
     
     <div class="text_to_copy">
-        <textarea id = "endmail" readonly>     
+        <textarea id = "readyToSendEmail" readonly>     
         </textarea>
         </div>
     </div>
