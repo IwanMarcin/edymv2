@@ -61,15 +61,19 @@ document.getElementById("generateEmailWithRaport").onclick = function () {
 
     if (raportFromPrinter > raportFromSubiekt) {
         alert(
-            `Prawdopodobnie jakiś z paragonów na kwotę ${
+            `Prawdopodobnie jakiś z paragonów na kwotę ${(
                 raportFromPrinter - raportFromSubiekt
-            } zł został podwójnie zafiskalizowany. Napisz stosowne oświadczenie i koniecznie daj znać o tym Milence!`
+            ).toFixed(
+                2
+            )} zł został podwójnie zafiskalizowany. Napisz stosowne oświadczenie i koniecznie daj znać o tym Milence!`
         );
     } else if (raportFromPrinter < raportFromSubiekt) {
         alert(
-            `Prawdopodobnie jakiś z paragonów na kwotę ${
+            `Prawdopodobnie jakiś z paragonów na kwotę ${(
                 raportFromSubiekt - raportFromPrinter
-            } zł nie został zarejestrowany na drukarce fiskalnej, z której otrzymałeś raport. Sprawdź statusy fiskalne w Subiekcie! Jeśli wszystkie się zgadzają, istnieje szansa, że paragon mógł zostać wydrukowany na innej drukarce fiskalnej! Koniecznie skontaktuj się z Mileną, aby wyjaśnić ten problem!`
+            ).toFixed(
+                2
+            )} zł nie został zarejestrowany na drukarce fiskalnej, z której otrzymałeś raport. Sprawdź statusy fiskalne w Subiekcie! Jeśli wszystkie się zgadzają, istnieje szansa, że paragon mógł zostać wydrukowany na innej drukarce fiskalnej! Koniecznie skontaktuj się z Mileną, aby wyjaśnić ten problem!`
         );
     }
 
